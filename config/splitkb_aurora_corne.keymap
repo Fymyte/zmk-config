@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 &mt {
-    tapping-term-ms = <150>;
+    // tapping-term-ms = <150>;
 };
 
 / {
@@ -58,3 +58,5 @@
                 };
         };
 };
+
+// vim:ft=dts
