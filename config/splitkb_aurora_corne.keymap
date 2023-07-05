@@ -21,6 +21,26 @@
             quick-release;
             release-after-ms = <1000>;
         };
+        undo_page_up: undo_page_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UNDO_PAGE_UP";
+            bindings =
+                <&kp LC(Z)>,
+                <&kp PAGE_UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+        delete_page_down: delete_page_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DELETE_PAGE_DOWN";
+            bindings =
+                <&kp DEL>,
+                <&kp PAGE_DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     keymap {
@@ -64,10 +84,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-  &kp TAB  &kp N1  &kp N2         &kp N3   &kp N4  &kp N5      &kp N6  &kp PAGE_UP    &kp N8     &kp N9    &kp N0  &tog 3
-   &trans  &trans  &trans  &kp PAGE_DOWN  &kp END  &trans    &kp LEFT     &kp DOWN    &kp UP  &kp RIGHT  &kp HOME  &trans
-&kp LSHFT  &trans  &trans         &trans   &trans  &trans      &trans       &trans    &trans     &trans    &trans  &trans
-                                &kp LGUI   &trans  &trans      &trans       &trans  &kp RALT
+  &kp TAB  &kp N1  &kp LC(RIGHT_ARROW)         &kp N3   &kp N4              &kp N5      &kp N6  &undo_page_up    &kp N8     &kp N9    &kp N0  &tog 3
+   &trans  &trans    &delete_page_down  &kp PAGE_DOWN  &kp END              &trans    &kp LEFT       &kp DOWN    &kp UP  &kp RIGHT  &kp HOME  &trans
+&kp LSHFT  &trans               &trans         &trans   &trans  &kp LC(LEFT_ARROW)      &trans         &trans    &trans     &trans    &trans  &trans
+                                             &kp LGUI   &trans              &trans      &trans         &trans  &kp RALT
             >;
         };
 
