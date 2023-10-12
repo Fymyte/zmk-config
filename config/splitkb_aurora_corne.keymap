@@ -26,9 +26,7 @@
         undo_page_up: undo_page_up {
             compatible = "zmk,behavior-mod-morph";
             label = "UNDO_PAGE_UP";
-            bindings =
-                <&kp LC(Z)>,
-                <&kp PAGE_UP>;
+            bindings = <&kp LC(Z)>, <&kp PAGE_UP>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -36,9 +34,7 @@
         delete_page_down: delete_page_down {
             compatible = "zmk,behavior-mod-morph";
             label = "DELETE_PAGE_DOWN";
-            bindings =
-                <&kp DELETE>,
-                <&kp PAGE_DOWN>;
+            bindings = <&kp DELETE>, <&kp PAGE_DOWN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -86,10 +82,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1  &kp LC(RIGHT_ARROW)  &kp N3             &kp N4           &kp N5                &kp LC(C)  &undo_page_up  &kp N8  &kp N9     &kp LC(V)  &tog 3
+&kp TAB    &kp N1  &kp LC(RIGHT_ARROW)  &kp N3             &kp N4           &kp N5                &kp LC(C)  &undo_page_up  &kp N8  &kp N9     &kp LC(V)  &trans
 &trans     &trans  &trans               &delete_page_down  &kp END          &trans                &kp LEFT   &kp DOWN       &kp UP  &kp RIGHT  &kp HOME   &trans
 &kp LSHFT  &trans  &trans               &trans             &kt RIGHT_SHIFT  &kp LC(LEFT_ARROW)    &trans     &trans         &trans  &trans     &trans     &trans
-                                        &kp LGUI           &trans           &trans                &trans     &mo 4          &trans
+                                        &kp LGUI           &trans           &trans                &trans     &trans         &trans
             >;
         };
 
@@ -104,11 +100,20 @@
 
         functions {
             bindings = <
-&bt BT_CLR  &trans        &trans        &trans        &trans        &trans    &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans
+&bt BT_CLR  &trans        &trans        &trans        &trans        &trans    &trans  &kp F1  &kp F2   &kp F3   &kp F4   &tog 3
 &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans    &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans
 &trans      &trans        &trans        &trans        &trans        &trans    &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans
                                         &trans        &trans        &trans    &trans  &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        forth_combo {
+            if-layers = <1 2>;
+            then-layer = <4>;
         };
     };
 };
