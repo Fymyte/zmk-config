@@ -23,6 +23,7 @@
             quick-release;
             release-after-ms = <1000>;
         };
+
         undo_page_up: undo_page_up {
             compatible = "zmk,behavior-mod-morph";
             label = "UNDO_PAGE_UP";
@@ -31,6 +32,7 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
         };
+
         delete_page_down: delete_page_down {
             compatible = "zmk,behavior-mod-morph";
             label = "DELETE_PAGE_DOWN";
@@ -91,7 +93,7 @@
 
         gaming {
             bindings = <
-&kp TAB           &trans  &trans  &trans      &trans        &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB           &trans  &trans  &trans      &trans        &trans       &trans  &trans  &trans  &trans  &trans  &sl 0
 &kp LEFT_CONTROL  &trans  &trans  &trans      &trans        &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &kp LEFT_SHIFT    &trans  &trans  &trans      &trans        &trans       &trans  &trans  &trans  &trans  &trans  &trans
                                   &kp ESCAPE  &kp LEFT_ALT  &kp SPACE    &trans  &trans  &trans
