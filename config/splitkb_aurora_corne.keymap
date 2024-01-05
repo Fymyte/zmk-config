@@ -93,7 +93,7 @@
 
         gaming {
             bindings = <
-&kp TAB           &trans  &trans  &trans      &trans        &trans       &trans  &trans  &trans  &trans  &trans  &tog 3
+&kp TAB           &trans  &trans  &trans      &trans        &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &kp LEFT_CONTROL  &trans  &trans  &trans      &trans        &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &kp LEFT_SHIFT    &trans  &trans  &trans      &trans        &trans       &trans  &trans  &trans  &trans  &trans  &trans
                                   &kp ESCAPE  &kp LEFT_ALT  &kp SPACE    &trans  &trans  &trans
